@@ -330,7 +330,7 @@ text-align: justify}
 <p>Beneficios.</p>
 <ul>
 <li><p>R es un lenguaje de programación en un entorno centrado principalmente en análisis estadístico y gráficos.</p></li>
-<li><p>R se descarga de Comprehensive R Archive Network o CRAN. En CRANse instala paquetes.</p></li>
+<li><p>R se descarga de Comprehensive R Archive Network (CRAN). En CRAN se instala paquetes.</p></li>
 <li><p>R es uno de los cinco idiomas más solicitados en las ofertas de trabajo de los científicos de datos.</p></li>
 <li><p>R es gratis.</p></li>
 <li><p>R es muy versátil y tiene una amplia funcionalidad</p></li>
@@ -349,10 +349,41 @@ text-align: justify}
 <p>Cada paquete es desarrollado y publicado por la comunidad R en general y depositada en repositorios. Un repositorio es una ubicación central donde existen muchos paquetes desarrollados y disponibles para su descarga</p>
 <p>Hay tres grandes repositorios.</p>
 <ul>
-<li><p>CRAN. The Comprehensive R Archive Network (Red Integral de Archivos R), que es el repositorio principal de R con más de 12,100 paquetes disponibles.</p></li>
-<li><p>Bioconductores. que es principalmente para paquetes de enfoque bioinformático.</p></li>
-<li><p>GitHub. un muy popular repositorio de código abierto que no es específico de R.</p></li>
+<li>CRAN. The Comprehensive R Archive Network (Red Integral de Archivos R), que es el repositorio principal de R con más de 12,100 paquetes disponibles.</li>
 </ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjpbImluc3RhbGwucGFja2FnZXMoXCJnZ3Bsb3QyXCIpIiwiaW5zdGFsbC5wYWNrYWdlcyhjKFwiZ2dwbG90MlwiLFwiZHBseXJcIikpIl19 -->
+<pre class="r"><code>install.packages(&quot;ggplot2&quot;)
+install.packages(c(&quot;ggplot2&quot;,&quot;dplyr&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>O presionar en el botón Tools&gt;Install Packages</p>
+<ul>
+<li>Bioconductores. que es principalmente para paquetes de enfoque bioinformático.</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjpbIiNzb3VyY2UoXCJodHRwczovL2Jpb2NvbmR1Y3Rvci5vcmcvYmlvY0xpdGUuUlwiKSIsImJpb2NMaXRlKCkiLCJiaW9jTGl0ZShcIkdlbm9taWNGZWF0dXJlc1wiKSJdfQ== -->
+<pre class="r"><code>#source(&quot;https://bioconductor.org/biocLite.R&quot;)
+biocLite()
+biocLite(&quot;GenomicFeatures&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>GitHub. un muy popular repositorio de código abierto que no es específico de R.</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjpbImluc3RhbGwucGFja2FnZXMoXCJkZXZ0b29sc1wiKSIsImxpYnJhcnkoZGV2dG9vbHMpIiwiI2luc3RhbGxfZ2l0aHViKFwiYXV0aG9yL3BhY2thZ2VcIikiXX0= -->
+<pre class="r"><code>install.packages(&quot;devtools&quot;)
+library(devtools)
+#install_github(&quot;author/package&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 </div>
 <div id="los-datos-y-tipos-de-datos" class="section level1" number="2">
@@ -366,11 +397,509 @@ text-align: justify}
 <p>-Documento, testimonio, fundamento.</p>
 <p>-Informática. Información dispuesta de manera adecuada para su tratamiento por una computadora.</p></li>
 </ul>
+</div>
+<div id="qué-son-las-bases-de-datos" class="section level2" number="2.2">
+<h2 number="2.2"><span class="header-section-number">2.2</span> ¿Qué son las bases de datos?</h2>
+<ul>
+<li><p><a href="https://es.wikipedia.org/wiki/Base_de_datos">Wikipedia</a>. Una base de datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso.</p></li>
+<li><p><a href="http://www.maestrosdelweb.com/que-son-las-bases-de-datos/">Platzi</a>. Una base de datos es un “almacén” que nos permite guardar grandes cantidades de información de forma organizada para que luego podamos encontrar y utilizar fácilmente.</p></li>
+</ul>
+</div>
+</div>
+<div id="objetos-de-r" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> Objetos de R</h1>
+<p>Entonces, todas las cosas que manipulas en R, lo llamaremos como objetos, los objetos pueden ser de diferentes tipos:</p>
+<ul>
+<li>character</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtXCJob2xhXCJcbmFcbmBgYCJ9 -->
+<pre class="r"><code>a&lt;-&quot;hola&quot;
+a</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaG9sYVwiXG4ifQ== -->
+<pre><code>[1] &quot;hola&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MoYSlcbmBgYCJ9 -->
+<pre class="r"><code>class(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiY2hhcmFjdGVyXCJcbiJ9 -->
+<pre><code>[1] &quot;character&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>numeric (números reales con o sin decimales)</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtMTA7YjwtMTAuNVxuYTtiXG5gYGAifQ== -->
+<pre class="r"><code>a&lt;-10;b&lt;-10.5
+a;b</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEwXG5bMV0gMTAuNVxuIn0= -->
+<pre><code>[1] 10
+[1] 10.5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MoYSk7Y2xhc3MoYilcbmBgYCJ9 -->
+<pre class="r"><code>class(a);class(b)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwibnVtZXJpY1wiXG5bMV0gXCJudW1lcmljXCJcbiJ9 -->
+<pre><code>[1] &quot;numeric&quot;
+[1] &quot;numeric&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI07Dum1lcm8gaW5maW5pdG9cbmEvMFxuYGBgIn0= -->
+<pre class="r"><code>#Número infinito
+a/0</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEluZlxuIn0= -->
+<pre><code>[1] Inf</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZDwtYS8wXG5jbGFzcyhkKVxuYGBgIn0= -->
+<pre class="r"><code>d&lt;-a/0
+class(d)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwibnVtZXJpY1wiXG4ifQ== -->
+<pre><code>[1] &quot;numeric&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI07Dum1lcm8gTmFOIChpbmRlZmluaWRvL27Dum1lcm8gZmFsdGFudGUpIChOb3QgYSBOdW1iZXIgTmFOKVxuMC8wXG5gYGAifQ== -->
+<pre class="r"><code>#Número NaN (indefinido/número faltante) (Not a Number NaN)
+0/0</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIE5hTlxuIn0= -->
+<pre><code>[1] NaN</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZT0wLzBcbmNsYXNzKGUpXG5gYGAifQ== -->
+<pre class="r"><code>e=0/0
+class(e)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwibnVtZXJpY1wiXG4ifQ== -->
+<pre><code>[1] &quot;numeric&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>integer (números enteros)</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYT0xMExcbmFcbmBgYCJ9 -->
+<pre class="r"><code>a=10L
+a</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEwXG4ifQ== -->
+<pre><code>[1] 10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MoYSlcbmBgYCJ9 -->
+<pre class="r"><code>class(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaW50ZWdlclwiXG4ifQ== -->
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>complex (números complejos/imaginarios)</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYT0xMGlcbmFcbmBgYCJ9 -->
+<pre class="r"><code>a=10i
+a</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDArMTBpXG4ifQ== -->
+<pre><code>[1] 0+10i</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MoYSlcbmBgYCJ9 -->
+<pre class="r"><code>class(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiY29tcGxleFwiXG4ifQ== -->
+<pre><code>[1] &quot;complex&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ul>
+<li>logical (lógicos TRUE/FALSE)</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYT1UUlVFO2I9RkFMU0VcbmE7YlxuYGBgIn0= -->
+<pre class="r"><code>a=TRUE;b=FALSE
+a;b</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcblsxXSBGQUxTRVxuIn0= -->
+<pre><code>[1] TRUE
+[1] FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MoYSk7Y2xhc3MoYilcbmBgYCJ9 -->
+<pre class="r"><code>class(a);class(b)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwibG9naWNhbFwiXG5bMV0gXCJsb2dpY2FsXCJcbiJ9 -->
+<pre><code>[1] &quot;logical&quot;
+[1] &quot;logical&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="operaciones-básicas" class="section level1" number="4">
+<h1 number="4"><span class="header-section-number">4</span> Operaciones básicas</h1>
+<p>La secuencia correcta de “orden de operación” es:</p>
+<p>Paréntesis, exponenciación, multiplicación y división, suma y resta</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1N1bWFcbjIrM1xuYGBgIn0= -->
+<pre class="r"><code>#Suma
+2+3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDVcbiJ9 -->
+<pre><code>[1] 5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1Jlc3RhXG40LTJcbmBgYCJ9 -->
+<pre class="r"><code>#Resta
+4-2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDJcbiJ9 -->
+<pre><code>[1] 2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI011bHRpcGxpY2FjacOzblxuNCozXG5gYGAifQ== -->
+<pre class="r"><code>#Multiplicación
+4*3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEyXG4ifQ== -->
+<pre><code>[1] 12</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0RpdmlzacOzblxuMTAvM1xuYGBgIn0= -->
+<pre class="r"><code>#División
+10/3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMuMzMzMzMzXG4ifQ== -->
+<pre><code>[1] 3.333333</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0RpdmlzacOzbiBleGFjdGFcbjEwJS8lM1xuYGBgIn0= -->
+<pre class="r"><code>#División exacta
+10%/%3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDNcbiJ9 -->
+<pre><code>[1] 3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI03Ds2R1bG8gbyByZXN0b1xuMTAlJTNcbmBgYCJ9 -->
+<pre class="r"><code>#Módulo o resto
+10%%3</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcbiJ9 -->
+<pre><code>[1] 1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1BvdGVuY2lhXG41XjJcbmBgYCJ9 -->
+<pre class="r"><code>#Potencia
+5^2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI1XG4ifQ== -->
+<pre><code>[1] 25</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1Jhw616XG5zcXJ0KDkpXG5gYGAifQ== -->
+<pre class="r"><code>#Raíz
+sqrt(9)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDNcbiJ9 -->
+<pre><code>[1] 3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0V4cG9uZW50ZVxuZXhwKDQpXG5gYGAifQ== -->
+<pre class="r"><code>#Exponente
+exp(4)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDU0LjU5ODE1XG4ifQ== -->
+<pre><code>[1] 54.59815</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0xvZ2FyaXRtbyBuZXBlcmlhbm8gXG5sb2coMylcbmBgYCJ9 -->
+<pre class="r"><code>#Logaritmo neperiano 
+log(3)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEuMDk4NjEyXG4ifQ== -->
+<pre><code>[1] 1.098612</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0xvZ2FyaXRtbyBjb24gYmFzZVxubG9nKDMsYmFzZT0xMClcbmBgYCJ9 -->
+<pre class="r"><code>#Logaritmo con base
+log(3,base=10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuNDc3MTIxM1xuIn0= -->
+<pre><code>[1] 0.4771213</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI07Dum1lcm8gcGlcbnBpXG5gYGAifQ== -->
+<pre class="r"><code>#Número pi
+pi</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMuMTQxNTkzXG4ifQ== -->
+<pre><code>[1] 3.141593</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="generación-de-secuencias" class="section level1" number="5">
+<h1 number="5"><span class="header-section-number">5</span> Generación de Secuencias</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMToyMFxuYGBgIn0= -->
+<pre class="r"><code>1:20</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgNiAgNyAgOCAgOSAxMCAxMSAxMiAxMyAxNCAxNSAxNiAxNyAxOCAxOSAyMFxuIn0= -->
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VxKDEsMjApXG5gYGAifQ== -->
+<pre class="r"><code>seq(1,20)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgNiAgNyAgOCAgOSAxMCAxMSAxMiAxMyAxNCAxNSAxNiAxNyAxOCAxOSAyMFxuIn0= -->
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VxKDEsMjAsYnk9MilcbmBgYCJ9 -->
+<pre class="r"><code>seq(1,20,by=2)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMyAgNSAgNyAgOSAxMSAxMyAxNSAxNyAxOVxuIn0= -->
+<pre><code> [1]  1  3  5  7  9 11 13 15 17 19</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VxKDUsMTAsbGVuZ3RoPTMwKVxuYGBgIn0= -->
+<pre class="r"><code>seq(5,10,length=30)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgNS4wMDAwMDAgIDUuMTcyNDE0ICA1LjM0NDgyOCAgNS41MTcyNDEgIDUuNjg5NjU1ICA1Ljg2MjA2OSAgNi4wMzQ0ODMgIDYuMjA2ODk3ICA2LjM3OTMxMCAgNi41NTE3MjQgIDYuNzI0MTM4ICA2Ljg5NjU1MiAgNy4wNjg5NjZcblsxNF0gIDcuMjQxMzc5ICA3LjQxMzc5MyAgNy41ODYyMDcgIDcuNzU4NjIxICA3LjkzMTAzNCAgOC4xMDM0NDggIDguMjc1ODYyICA4LjQ0ODI3NiAgOC42MjA2OTAgIDguNzkzMTAzICA4Ljk2NTUxNyAgOS4xMzc5MzEgIDkuMzEwMzQ1XG5bMjddICA5LjQ4Mjc1OSAgOS42NTUxNzIgIDkuODI3NTg2IDEwLjAwMDAwMFxuIn0= -->
+<pre><code> [1]  5.000000  5.172414  5.344828  5.517241  5.689655  5.862069  6.034483  6.206897  6.379310  6.551724  6.724138  6.896552  7.068966
+[14]  7.241379  7.413793  7.586207  7.758621  7.931034  8.103448  8.275862  8.448276  8.620690  8.793103  8.965517  9.137931  9.310345
+[27]  9.482759  9.655172  9.827586 10.000000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMTpsZW5ndGgoc2VxKDUsMTAsbGVuZ3RoPTMwKSlcbmBgYCJ9 -->
+<pre class="r"><code>1:length(seq(5,10,length=30))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgNiAgNyAgOCAgOSAxMCAxMSAxMiAxMyAxNCAxNSAxNiAxNyAxOCAxOSAyMCAyMSAyMiAyMyAyNCAyNSAyNiAyNyAyOCAyOSAzMFxuIn0= -->
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWlfc2VjPC1jKDQsNSw2LDgpXG5zZXEoYWxvbmcud2l0aD1taV9zZWMpXG5gYGAifQ== -->
+<pre class="r"><code>mi_sec&lt;-c(4,5,6,8)
+seq(along.with=mi_sec)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEgMiAzIDRcbiJ9 -->
+<pre><code>[1] 1 2 3 4</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VxX2Fsb25nKG1pX3NlYylcbmBgYCJ9 -->
+<pre class="r"><code>seq_along(mi_sec)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEgMiAzIDRcbiJ9 -->
+<pre><code>[1] 1 2 3 4</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVwKDAsdGltZXM9NDApXG5gYGAifQ== -->
+<pre class="r"><code>rep(0,times=40)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwXG4ifQ== -->
+<pre><code> [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVwKGMoMCwxLDIpLHRpbWVzPTEwKVxuYGBgIn0= -->
+<pre class="r"><code>rep(c(0,1,2),times=10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAwIDEgMiAwIDEgMiAwIDEgMiAwIDEgMiAwIDEgMiAwIDEgMiAwIDEgMiAwIDEgMiAwIDEgMiAwIDEgMlxuIn0= -->
+<pre><code> [1] 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVwKGMoMCwxLDIpLGVhY2g9MTApXG5gYGAifQ== -->
+<pre class="r"><code>rep(c(0,1,2),each=10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAwIDAgMCAwIDAgMCAwIDAgMCAwIDEgMSAxIDEgMSAxIDEgMSAxIDEgMiAyIDIgMiAyIDIgMiAyIDIgMlxuIn0= -->
+<pre><code> [1] 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="vectores-matrices-y-listas" class="section level1" number="6">
+<h1 number="6"><span class="header-section-number">6</span> Vectores, Matrices y Listas</h1>
+<div id="vectores" class="section level2" number="6.1">
+<h2 number="6.1"><span class="header-section-number">6.1</span> Vectores</h2>
+<p>Un vector es un <strong>objeto</strong> que puede contener dentro de él un solo tipo/clase de otros objetos pero repetido varias veces (numeric, character, integer, complex, logical).</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0NyZWFjacOzbiBkZSB1biB2ZWN0b3IgcHJlZGV0ZXJtaW5hZG9cbnZlY3Rvcihtb2RlPVwiY2hhcmFjdGVyXCIsbGVuZ3RoID0gNUwpXG5cbmBgYCJ9 -->
+<pre class="r"><code>#Creación de un vector predeterminado
+vector(mode=&quot;character&quot;,length = 5L)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiXCIgXCJcIiBcIlwiIFwiXCIgXCJcIlxuIn0= -->
+<pre><code>[1] &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmVjdG9yKG1vZGU9XCJudW1lcmljXCIsbGVuZ3RoID0gNUwpXG5cbmBgYCJ9 -->
+<pre class="r"><code>vector(mode=&quot;numeric&quot;,length = 5L)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAgMCAwIDAgMFxuIn0= -->
+<pre><code>[1] 0 0 0 0 0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmVjdG9yKG1vZGU9XCJpbnRlZ2VyXCIsbGVuZ3RoID0gNUwpXG5cbmBgYCJ9 -->
+<pre class="r"><code>vector(mode=&quot;integer&quot;,length = 5L)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAgMCAwIDAgMFxuIn0= -->
+<pre><code>[1] 0 0 0 0 0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmVjdG9yKG1vZGU9XCJsb2dpY2FsXCIsbGVuZ3RoID0gNUwpXG5cbmBgYCJ9 -->
+<pre class="r"><code>vector(mode=&quot;logical&quot;,length = 5L)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFIEZBTFNFIEZBTFNFIEZBTFNFIEZBTFNFXG4ifQ== -->
+<pre><code>[1] FALSE FALSE FALSE FALSE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmVjdG9yKG1vZGU9XCJjb21wbGV4XCIsbGVuZ3RoID0gNUwpXG5cbmBgYCJ9 -->
+<pre class="r"><code>vector(mode=&quot;complex&quot;,length = 5L)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDArMGkgMCswaSAwKzBpIDArMGkgMCswaVxuIn0= -->
+<pre><code>[1] 0+0i 0+0i 0+0i 0+0i 0+0i</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0NyZWFjacOzbiBkZSB2ZWN0b3IgZWRpdGFibGVcbmMoXCJob2xhXCIsXCJtdW5kb1wiKVxuYGBgIn0= -->
+<pre class="r"><code>#Creación de vector editable
+c(&quot;hola&quot;,&quot;mundo&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaG9sYVwiICBcIm11bmRvXCJcbiJ9 -->
+<pre><code>[1] &quot;hola&quot;  &quot;mundo&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYygwLjUsMSlcbmBgYCJ9 -->
+<pre class="r"><code>c(0.5,1)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuNSAxLjBcbiJ9 -->
+<pre><code>[1] 0.5 1.0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYyhUUlVFLEZBTFNFLFQsRilcbmBgYCJ9 -->
+<pre class="r"><code>c(TRUE,FALSE,T,F)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICBUUlVFIEZBTFNFICBUUlVFIEZBTFNFXG4ifQ== -->
+<pre><code>[1]  TRUE FALSE  TRUE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYygyaSw1aSlcbmBgYCJ9 -->
+<pre class="r"><code>c(2i,5i)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDArMmkgMCs1aVxuIn0= -->
+<pre><code>[1] 0+2i 0+5i</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgQsOhc2ljbyINCnN1YnRpdGxlOiAiQ2xhc2UgMSINCmF1dGhvcjogIkJsYWRpbWlyIE1vcmFsZXMgVG9ycmV6Ig0KZGF0ZTogIjA4IGRlIGZlYnJlcm8gMjAyMCINCm91dHB1dDogDQogIGh0bWxfbm90ZWJvb2s6DQogICAgdG9jOiB0cnVlDQogICAgdG9jX2Zsb2F0OiB0cnVlDQogICAgdGhlbWU6IGZsYXRseQ0KICAgIGRmX3ByaW50OiBwYWdlZA0KICAgIGZpZ19jYXB0aW9uOiB0cnVlDQogICAgbnVtYmVyX3NlY3Rpb246IHRydWUNCi0tLQ0KDQo8c3R5bGU+DQpib2R5IHsNCnRleHQtYWxpZ246IGp1c3RpZnl9DQp9DQo8L3N0eWxlPg0KDQojIFIgeSBSU3R1ZGlvDQoNCiMjIFINCg0KUiBlcyB1biBlbnRvcm5vIGRlIHNvZnR3YXJlIGxpYnJlIHBhcmEgZ3LDoWZpY29zIHkgY29tcHV0YWNpw7NuIGVzdGFkw61zdGljYS4gU2UgY29tcGlsYSB5IHNlIGVqZWN1dGEgZW4gdW5hIGFtcGxpYSB2YXJpZWRhZCBkZSBwbGF0YWZvcm1hcyBVTklYLCBXaW5kb3dzIHkgTWFjT1MuIA0KDQpCZW5lZmljaW9zLg0KDQoqIFIgZXMgdW4gbGVuZ3VhamUgZGUgcHJvZ3JhbWFjacOzbiBlbiB1biBlbnRvcm5vIGNlbnRyYWRvIHByaW5jaXBhbG1lbnRlIGVuIGFuw6FsaXNpcyBlc3RhZMOtc3RpY28geSBncsOhZmljb3MuIA0KDQoqIFIgc2UgZGVzY2FyZ2EgZGUgQ29tcHJlaGVuc2l2ZSBSIEFyY2hpdmUgTmV0d29yayBvIENSQU4uIEVuIENSQU5zZSBpbnN0YWxhIHBhcXVldGVzLiANCg0KKiBSIGVzIHVubyBkZSBsb3MgY2luY28gaWRpb21hcyBtw6FzIHNvbGljaXRhZG9zIGVuIGxhcyBvZmVydGFzIGRlIHRyYWJham8gZGUgbG9zIGNpZW50w61maWNvcyBkZSBkYXRvcy4gDQoNCiogUiBlcyBncmF0aXMuIA0KDQoqIFIgZXMgbXV5IHZlcnPDoXRpbCB5IHRpZW5lIHVuYSBhbXBsaWEgZnVuY2lvbmFsaWRhZCANCg0KRW4gcGFydGljdWxhciwgcGFyYSBsYXMgcGVyc29uYXMgcXVlIHJlY2nDqW4gY29taWVuemFuIGNvbiBSLCBzdSBjb211bmlkYWQgZXMgdW4gZ3JhbiBiZW5lZmljaW8gZGViaWRvIGEgc3UgcG9wdWxhcmlkYWQuIEhheSB2YXJpb3MgZm9yb3MgcXVlIHRpZW5lbiBww6FnaW5hcyB5IHDDoWdpbmFzIGRlZGljYWRhcyBhIHJlc29sdmVyIHByb2JsZW1hcyBkZSBSLiANCg0KUGFyYSBkZXNjYXJnYXIgZWwgcHJvZ3JhbWEgaW5ncmVzYXIgYWwgc2lndWllbnRlIGVubGFjZSA8aHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvPiB5IHNpZ2EgbGFzIGluc3RydWNjaW9uZXMgZGUgZGVzY2FyZ2EgZSBpbnN0YWxhY2nDs24uDQoNCg0KIyMgUlN0dWRpbw0KDQpSU3R1ZGlvIGVzIHVuYSBpbnRlcmZheiBncsOhZmljYSBkZSB1c3VhcmlvIHBhcmEgUiBxdWUgbGUgcGVybWl0ZSBlc2NyaWJpciwgZWRpdGFyIHkgYWxtYWNlbmFyIGPDs2RpZ28sIGdlbmVyYXIsIHZlciwgeSBhbG1hY2VuYXIgZ3LDoWZpY29zLCBhZG1pbmlzdHJhciBhcmNoaXZvcywgb2JqZXRvcyB5IG1hcmNvcyBkZSBkYXRvcywgZSBpbnRlZ3JhcnNlIGNvbiBsb3Mgc2lzdGVtYXMgZGUgY29udHJvbCBkZSB2ZXJzaW9uZXMsIHBvciBub21icmFyIGFsZ3VuYXMgZGUgc3VzIGZ1bmNpb25lcy4NCg0KRGVzY2FyZ3VlIGVsIHByb2dyYW1hIGVuIDxodHRwczovL3JzdHVkaW8uY29tL3Byb2R1Y3RzL3JzdHVkaW8vZG93bmxvYWQvPi4NCg0KIyMgUGFxdWV0ZXMgZGUgUg0KDQpVbiBwYXF1ZXRlIGVzIHVuYSBjb2xlY2Npw7NuIGRlIGZ1bmNpb25lcywgZGF0b3MsIHkgY8OzZGlnbyBjb252ZW5pZW50ZW1lbnRlIHByb3BvcmNpb25hZG8gZW4gdW4gZm9ybWF0byBjb21wbGV0byBhZ3JhZGFibGUsIGhheSBwb2NvIG3DoXMgZGUgMTQuMzAwIHBhcXVldGVzIGRpc3BvbmlibGVzIHBhcmEgZGVzY2FyZ2FyLCBjYWRhIHVubyBjb24gc3VzIHByb3BpYXMgZnVuY2lvbmVzIHkgY8OzZGlnbyBlc3BlY2lhbGl6YWRvcywgdG9kbyBwb3IgYWxnw7puIHByb3DDs3NpdG8gZGlmZXJlbnRlLg0KDQpDYWRhIHBhcXVldGUgZXMgZGVzYXJyb2xsYWRvIHkgcHVibGljYWRvIHBvciBsYSBjb211bmlkYWQgUiBlbiBnZW5lcmFsIHkgZGVwb3NpdGFkYSBlbiByZXBvc2l0b3Jpb3MuIFVuIHJlcG9zaXRvcmlvIGVzIHVuYSB1YmljYWNpw7NuIGNlbnRyYWwgZG9uZGUgZXhpc3RlbiBtdWNob3MgcGFxdWV0ZXMgZGVzYXJyb2xsYWRvcyB5IGRpc3BvbmlibGVzIHBhcmEgc3UgZGVzY2FyZ2ENCg0KSGF5IHRyZXMgZ3JhbmRlcyByZXBvc2l0b3Jpb3MuIA0KDQoqIENSQU4uIFRoZSBDb21wcmVoZW5zaXZlIFIgQXJjaGl2ZSBOZXR3b3JrIChSZWQgSW50ZWdyYWwgZGUgQXJjaGl2b3MgUiksIHF1ZSBlcyBlbCByZXBvc2l0b3JpbyBwcmluY2lwYWwgZGUgUiBjb24gbcOhcyBkZSAxMiwxMDAgcGFxdWV0ZXMgZGlzcG9uaWJsZXMuIA0KDQoqIEJpb2NvbmR1Y3RvcmVzLiBxdWUgZXMgcHJpbmNpcGFsbWVudGUgcGFyYSBwYXF1ZXRlcyBkZSBlbmZvcXVlIGJpb2luZm9ybcOhdGljby4gDQoNCiogR2l0SHViLiB1biBtdXkgcG9wdWxhciByZXBvc2l0b3JpbyBkZSBjw7NkaWdvIGFiaWVydG8gcXVlIG5vIGVzIGVzcGVjw61maWNvIGRlIFIuDQoNCg0KDQojCUxvcyBkYXRvcyB5IHRpcG9zIGRlIGRhdG9zIA0KDQojIyDCv1F1w6kgc29uIGxvcyBkYXRvcw0KDQoqIFtXaWtpcGVkaWFdKGh0dHBzOi8vZXMud2lraXBlZGlhLm9yZy93aWtpL0RhdG8pLiBVbiBkYXRvIGVzIHVuYSByZXByZXNlbnRhY2nDs24gc2ltYsOzbGljYSAobnVtw6lyaWNhLCBhbGZhYsOpdGljYSwgYWxnb3LDrXRtaWNhLCBlc3BhY2lhbCwgZXRjLikgZGUgdW4gYXRyaWJ1dG8gbyB2YXJpYWJsZSBjdWFudGl0YXRpdmEgbyBjdWFsaXRhdGl2YS4gDQoNCiogW1JlYWwgQWNhZGVtaWEgRXNwYcOxb2xhXShodHRwczovL2RsZS5yYWUuZXMvZGF0bykuIERlbCBsYXTDrW4gZGF0dW0gKidsbyBxdWUgc2UgZGEnKg0KDQogIC1JbmZvcm1hY2nDs24gc29icmUgYWxnbyBjb25jcmV0byBxdWUgcGVybWl0ZSBzdSBjb25vY2ltaWVudG8gZXhhY3RvIG8gc2lydmUgcGFyYSBkZWR1Y2lyIGxhcyBjb25zZWN1ZW5jaWFzIGRlcml2YWRhcyBkZSB1biBoZWNoby4NCg0KICAtRG9jdW1lbnRvLCB0ZXN0aW1vbmlvLCBmdW5kYW1lbnRvLg0KDQogIC1JbmZvcm3DoXRpY2EuIEluZm9ybWFjacOzbiBkaXNwdWVzdGEgZGUgbWFuZXJhIGFkZWN1YWRhIHBhcmEgc3UgdHJhdGFtaWVudG8gcG9yIHVuYSBjb21wdXRhZG9yYS4g</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgQsOhc2ljbyINCnN1YnRpdGxlOiAiQ2xhc2UgMSINCmF1dGhvcjogIkJsYWRpbWlyIE1vcmFsZXMgVG9ycmV6Ig0KZGF0ZTogIjA4IGRlIGZlYnJlcm8gMjAyMCINCm91dHB1dDogDQogIGh0bWxfbm90ZWJvb2s6DQogICAgdG9jOiB0cnVlDQogICAgdG9jX2Zsb2F0OiB0cnVlDQogICAgdGhlbWU6IGZsYXRseQ0KICAgIGRmX3ByaW50OiBwYWdlZA0KICAgIGZpZ19jYXB0aW9uOiB0cnVlDQogICAgbnVtYmVyX3NlY3Rpb246IHRydWUNCi0tLQ0KDQo8c3R5bGU+DQpib2R5IHsNCnRleHQtYWxpZ246IGp1c3RpZnl9DQp9DQo8L3N0eWxlPg0KDQojIFIgeSBSU3R1ZGlvDQoNCiMjIFINCg0KUiBlcyB1biBlbnRvcm5vIGRlIHNvZnR3YXJlIGxpYnJlIHBhcmEgZ3LDoWZpY29zIHkgY29tcHV0YWNpw7NuIGVzdGFkw61zdGljYS4gU2UgY29tcGlsYSB5IHNlIGVqZWN1dGEgZW4gdW5hIGFtcGxpYSB2YXJpZWRhZCBkZSBwbGF0YWZvcm1hcyBVTklYLCBXaW5kb3dzIHkgTWFjT1MuIA0KDQpCZW5lZmljaW9zLg0KDQoqIFIgZXMgdW4gbGVuZ3VhamUgZGUgcHJvZ3JhbWFjacOzbiBlbiB1biBlbnRvcm5vIGNlbnRyYWRvIHByaW5jaXBhbG1lbnRlIGVuIGFuw6FsaXNpcyBlc3RhZMOtc3RpY28geSBncsOhZmljb3MuIA0KDQoqIFIgc2UgZGVzY2FyZ2EgZGUgQ29tcHJlaGVuc2l2ZSBSIEFyY2hpdmUgTmV0d29yayAoQ1JBTikuIEVuIENSQU4gc2UgaW5zdGFsYSBwYXF1ZXRlcy4gDQoNCiogUiBlcyB1bm8gZGUgbG9zIGNpbmNvIGlkaW9tYXMgbcOhcyBzb2xpY2l0YWRvcyBlbiBsYXMgb2ZlcnRhcyBkZSB0cmFiYWpvIGRlIGxvcyBjaWVudMOtZmljb3MgZGUgZGF0b3MuIA0KDQoqIFIgZXMgZ3JhdGlzLiANCg0KKiBSIGVzIG11eSB2ZXJzw6F0aWwgeSB0aWVuZSB1bmEgYW1wbGlhIGZ1bmNpb25hbGlkYWQgDQoNCkVuIHBhcnRpY3VsYXIsIHBhcmEgbGFzIHBlcnNvbmFzIHF1ZSByZWNpw6luIGNvbWllbnphbiBjb24gUiwgc3UgY29tdW5pZGFkIGVzIHVuIGdyYW4gYmVuZWZpY2lvIGRlYmlkbyBhIHN1IHBvcHVsYXJpZGFkLiBIYXkgdmFyaW9zIGZvcm9zIHF1ZSB0aWVuZW4gcMOhZ2luYXMgeSBww6FnaW5hcyBkZWRpY2FkYXMgYSByZXNvbHZlciBwcm9ibGVtYXMgZGUgUi4gDQoNClBhcmEgZGVzY2FyZ2FyIGVsIHByb2dyYW1hIGluZ3Jlc2FyIGFsIHNpZ3VpZW50ZSBlbmxhY2UgPGh0dHBzOi8vY3Jhbi5yLXByb2plY3Qub3JnLz4geSBzaWdhIGxhcyBpbnN0cnVjY2lvbmVzIGRlIGRlc2NhcmdhIGUgaW5zdGFsYWNpw7NuLg0KDQoNCiMjIFJTdHVkaW8NCg0KUlN0dWRpbyBlcyB1bmEgaW50ZXJmYXogZ3LDoWZpY2EgZGUgdXN1YXJpbyBwYXJhIFIgcXVlIGxlIHBlcm1pdGUgZXNjcmliaXIsIGVkaXRhciB5IGFsbWFjZW5hciBjw7NkaWdvLCBnZW5lcmFyLCB2ZXIsIHkgYWxtYWNlbmFyIGdyw6FmaWNvcywgYWRtaW5pc3RyYXIgYXJjaGl2b3MsIG9iamV0b3MgeSBtYXJjb3MgZGUgZGF0b3MsIGUgaW50ZWdyYXJzZSBjb24gbG9zIHNpc3RlbWFzIGRlIGNvbnRyb2wgZGUgdmVyc2lvbmVzLCBwb3Igbm9tYnJhciBhbGd1bmFzIGRlIHN1cyBmdW5jaW9uZXMuDQoNCkRlc2Nhcmd1ZSBlbCBwcm9ncmFtYSBlbiA8aHR0cHM6Ly9yc3R1ZGlvLmNvbS9wcm9kdWN0cy9yc3R1ZGlvL2Rvd25sb2FkLz4uDQoNCiMjIFBhcXVldGVzIGRlIFINCg0KVW4gcGFxdWV0ZSBlcyB1bmEgY29sZWNjacOzbiBkZSBmdW5jaW9uZXMsIGRhdG9zLCB5IGPDs2RpZ28gY29udmVuaWVudGVtZW50ZSBwcm9wb3JjaW9uYWRvIGVuIHVuIGZvcm1hdG8gY29tcGxldG8gYWdyYWRhYmxlLCBoYXkgcG9jbyBtw6FzIGRlIDE0LjMwMCBwYXF1ZXRlcyBkaXNwb25pYmxlcyBwYXJhIGRlc2NhcmdhciwgY2FkYSB1bm8gY29uIHN1cyBwcm9waWFzIGZ1bmNpb25lcyB5IGPDs2RpZ28gZXNwZWNpYWxpemFkb3MsIHRvZG8gcG9yIGFsZ8O6biBwcm9ww7NzaXRvIGRpZmVyZW50ZS4NCg0KQ2FkYSBwYXF1ZXRlIGVzIGRlc2Fycm9sbGFkbyB5IHB1YmxpY2FkbyBwb3IgbGEgY29tdW5pZGFkIFIgZW4gZ2VuZXJhbCB5IGRlcG9zaXRhZGEgZW4gcmVwb3NpdG9yaW9zLiBVbiByZXBvc2l0b3JpbyBlcyB1bmEgdWJpY2FjacOzbiBjZW50cmFsIGRvbmRlIGV4aXN0ZW4gbXVjaG9zIHBhcXVldGVzIGRlc2Fycm9sbGFkb3MgeSBkaXNwb25pYmxlcyBwYXJhIHN1IGRlc2NhcmdhDQoNCkhheSB0cmVzIGdyYW5kZXMgcmVwb3NpdG9yaW9zLiANCg0KKiBDUkFOLiBUaGUgQ29tcHJlaGVuc2l2ZSBSIEFyY2hpdmUgTmV0d29yayAoUmVkIEludGVncmFsIGRlIEFyY2hpdm9zIFIpLCBxdWUgZXMgZWwgcmVwb3NpdG9yaW8gcHJpbmNpcGFsIGRlIFIgY29uIG3DoXMgZGUgMTIsMTAwIHBhcXVldGVzIGRpc3BvbmlibGVzLiANCg0KYGBge3IgaW5zdGFsYXJjcmFuLGV2YWw9RkFMU0V9DQppbnN0YWxsLnBhY2thZ2VzKCJnZ3Bsb3QyIikNCmluc3RhbGwucGFja2FnZXMoYygiZ2dwbG90MiIsImRwbHlyIikpDQpgYGANCg0KTyBwcmVzaW9uYXIgZW4gZWwgYm90w7NuIFRvb2xzPkluc3RhbGwgUGFja2FnZXMNCg0KKiBCaW9jb25kdWN0b3Jlcy4gcXVlIGVzIHByaW5jaXBhbG1lbnRlIHBhcmEgcGFxdWV0ZXMgZGUgZW5mb3F1ZSBiaW9pbmZvcm3DoXRpY28uIA0KYGBge3IgaW5zdGFsYXJiaW8sZXZhbD1GQUxTRX0NCiNzb3VyY2UoImh0dHBzOi8vYmlvY29uZHVjdG9yLm9yZy9iaW9jTGl0ZS5SIikNCmJpb2NMaXRlKCkNCmJpb2NMaXRlKCJHZW5vbWljRmVhdHVyZXMiKQ0KYGBgDQoqIEdpdEh1Yi4gdW4gbXV5IHBvcHVsYXIgcmVwb3NpdG9yaW8gZGUgY8OzZGlnbyBhYmllcnRvIHF1ZSBubyBlcyBlc3BlY8OtZmljbyBkZSBSLg0KDQpgYGB7ciBpbnN0YWxhcmdpdGh1YixldmFsPUZBTFNFfQ0KaW5zdGFsbC5wYWNrYWdlcygiZGV2dG9vbHMiKQ0KbGlicmFyeShkZXZ0b29scykNCiNpbnN0YWxsX2dpdGh1YigiYXV0aG9yL3BhY2thZ2UiKQ0KYGBgDQoNCiMJTG9zIGRhdG9zIHkgdGlwb3MgZGUgZGF0b3MgDQoNCiMjIMK/UXXDqSBzb24gbG9zIGRhdG9zDQoNCiogW1dpa2lwZWRpYV0oaHR0cHM6Ly9lcy53aWtpcGVkaWEub3JnL3dpa2kvRGF0bykuIFVuIGRhdG8gZXMgdW5hIHJlcHJlc2VudGFjacOzbiBzaW1iw7NsaWNhIChudW3DqXJpY2EsIGFsZmFiw6l0aWNhLCBhbGdvcsOtdG1pY2EsIGVzcGFjaWFsLCBldGMuKSBkZSB1biBhdHJpYnV0byBvIHZhcmlhYmxlIGN1YW50aXRhdGl2YSBvIGN1YWxpdGF0aXZhLiANCg0KKiBbUmVhbCBBY2FkZW1pYSBFc3Bhw7FvbGFdKGh0dHBzOi8vZGxlLnJhZS5lcy9kYXRvKS4gRGVsIGxhdMOtbiBkYXR1bSAqJ2xvIHF1ZSBzZSBkYScqDQoNCiAgLUluZm9ybWFjacOzbiBzb2JyZSBhbGdvIGNvbmNyZXRvIHF1ZSBwZXJtaXRlIHN1IGNvbm9jaW1pZW50byBleGFjdG8gbyBzaXJ2ZSBwYXJhIGRlZHVjaXIgbGFzIGNvbnNlY3VlbmNpYXMgZGVyaXZhZGFzIGRlIHVuIGhlY2hvLg0KDQogIC1Eb2N1bWVudG8sIHRlc3RpbW9uaW8sIGZ1bmRhbWVudG8uDQoNCiAgLUluZm9ybcOhdGljYS4gSW5mb3JtYWNpw7NuIGRpc3B1ZXN0YSBkZSBtYW5lcmEgYWRlY3VhZGEgcGFyYSBzdSB0cmF0YW1pZW50byBwb3IgdW5hIGNvbXB1dGFkb3JhLiANCiAgDQojIyDCv1F1w6kgc29uIGxhcyBiYXNlcyBkZSBkYXRvcz8NCg0KKiBbV2lraXBlZGlhXShodHRwczovL2VzLndpa2lwZWRpYS5vcmcvd2lraS9CYXNlX2RlX2RhdG9zKS4gVW5hIGJhc2UgZGUgZGF0b3MgZXMgdW4gY29uanVudG8gZGUgZGF0b3MgcGVydGVuZWNpZW50ZXMgYSB1biBtaXNtbyBjb250ZXh0byB5IGFsbWFjZW5hZG9zIHNpc3RlbcOhdGljYW1lbnRlIHBhcmEgc3UgcG9zdGVyaW9yIHVzby4NCg0KKiBbUGxhdHppXShodHRwOi8vd3d3Lm1hZXN0cm9zZGVsd2ViLmNvbS9xdWUtc29uLWxhcy1iYXNlcy1kZS1kYXRvcy8pLiBVbmEgYmFzZSBkZSBkYXRvcyBlcyB1biDigJxhbG1hY8OpbuKAnSBxdWUgbm9zIHBlcm1pdGUgZ3VhcmRhciBncmFuZGVzIGNhbnRpZGFkZXMgZGUgaW5mb3JtYWNpw7NuIGRlIGZvcm1hIG9yZ2FuaXphZGEgcGFyYSBxdWUgbHVlZ28gcG9kYW1vcyBlbmNvbnRyYXIgeSB1dGlsaXphciBmw6FjaWxtZW50ZS4NCg0KDQojIE9iamV0b3MgZGUgUg0KDQpFbnRvbmNlcywgdG9kYXMgbGFzIGNvc2FzIHF1ZSBtYW5pcHVsYXMgZW4gUiwgbG8gbGxhbWFyZW1vcyBjb21vIG9iamV0b3MsIGxvcyBvYmpldG9zIHB1ZWRlbiBzZXIgZGUgZGlmZXJlbnRlcyB0aXBvczoNCg0KKiBjaGFyYWN0ZXINCg0KYGBge3J9DQphPC0iaG9sYSINCmENCmNsYXNzKGEpDQpgYGANCg0KKiBudW1lcmljIChuw7ptZXJvcyByZWFsZXMgY29uIG8gc2luIGRlY2ltYWxlcykgDQoNCmBgYHtyfQ0KYTwtMTA7YjwtMTAuNQ0KYTtiDQpjbGFzcyhhKTtjbGFzcyhiKQ0KYGBgDQoNCg0KYGBge3J9DQojTsO6bWVybyBpbmZpbml0bw0KYS8wDQpkPC1hLzANCmNsYXNzKGQpDQpgYGANCg0KDQpgYGB7cn0NCiNOw7ptZXJvIE5hTiAoaW5kZWZpbmlkby9uw7ptZXJvIGZhbHRhbnRlKSAoTm90IGEgTnVtYmVyIE5hTikNCjAvMA0KZT0wLzANCmNsYXNzKGUpDQpgYGANCg0KDQoqIGludGVnZXIgKG7Dum1lcm9zIGVudGVyb3MpDQoNCmBgYHtyfQ0KYT0xMEwNCmENCmNsYXNzKGEpDQpgYGANCg0KKiBjb21wbGV4IChuw7ptZXJvcyBjb21wbGVqb3MvaW1hZ2luYXJpb3MpDQoNCmBgYHtyfQ0KYT0xMGkNCmENCmNsYXNzKGEpDQpgYGANCg0KKiBsb2dpY2FsIChsw7NnaWNvcyBUUlVFL0ZBTFNFKQ0KDQpgYGB7cn0NCmE9VFJVRTtiPUZBTFNFDQphO2INCmNsYXNzKGEpO2NsYXNzKGIpDQpgYGANCg0KIyBPcGVyYWNpb25lcyBiw6FzaWNhcyANCg0KTGEgc2VjdWVuY2lhIGNvcnJlY3RhIGRlICJvcmRlbiBkZSBvcGVyYWNpw7NuIiBlczoNCg0KUGFyw6ludGVzaXMsIGV4cG9uZW5jaWFjacOzbiwgbXVsdGlwbGljYWNpw7NuIHkgZGl2aXNpw7NuLCBzdW1hIHkgcmVzdGENCg0KYGBge3J9DQojU3VtYQ0KMiszDQpgYGANCg0KDQpgYGB7cn0NCiNSZXN0YQ0KNC0yDQpgYGANCg0KYGBge3J9DQojTXVsdGlwbGljYWNpw7NuDQo0KjMNCmBgYA0KDQpgYGB7cn0NCiNEaXZpc2nDs24NCjEwLzMNCmBgYA0KDQpgYGB7cn0NCiNEaXZpc2nDs24gZXhhY3RhDQoxMCUvJTMNCmBgYA0KDQpgYGB7cn0NCiNNw7NkdWxvIG8gcmVzdG8NCjEwJSUzDQpgYGANCg0KYGBge3J9DQojUG90ZW5jaWENCjVeMg0KYGBgDQoNCg0KYGBge3J9DQojUmHDrXoNCnNxcnQoOSkNCmBgYA0KDQoNCmBgYHtyfQ0KI0V4cG9uZW50ZQ0KZXhwKDQpDQpgYGANCg0KYGBge3J9DQojTG9nYXJpdG1vIG5lcGVyaWFubyANCmxvZygzKQ0KYGBgDQoNCmBgYHtyfQ0KI0xvZ2FyaXRtbyBjb24gYmFzZQ0KbG9nKDMsYmFzZT0xMCkNCmBgYA0KDQpgYGB7cn0NCiNOw7ptZXJvIHBpDQpwaQ0KYGBgDQoNCiMgR2VuZXJhY2nDs24gZGUgU2VjdWVuY2lhcw0KDQoNCmBgYHtyfQ0KMToyMA0KYGBgDQoNCmBgYHtyfQ0Kc2VxKDEsMjApDQpgYGANCg0KYGBge3J9DQpzZXEoMSwyMCxieT0yKQ0KYGBgDQoNCg0KYGBge3J9DQpzZXEoNSwxMCxsZW5ndGg9MzApDQpgYGANCg0KDQpgYGB7cn0NCjE6bGVuZ3RoKHNlcSg1LDEwLGxlbmd0aD0zMCkpDQpgYGANCg0KDQpgYGB7cn0NCm1pX3NlYzwtYyg0LDUsNiw4KQ0Kc2VxKGFsb25nLndpdGg9bWlfc2VjKQ0KYGBgDQoNCg0KYGBge3J9DQpzZXFfYWxvbmcobWlfc2VjKQ0KYGBgDQoNCg0KYGBge3J9DQpyZXAoMCx0aW1lcz00MCkNCmBgYA0KDQoNCmBgYHtyfQ0KcmVwKGMoMCwxLDIpLHRpbWVzPTEwKQ0KYGBgDQoNCg0KYGBge3J9DQpyZXAoYygwLDEsMiksZWFjaD0xMCkNCmBgYA0KDQoNCiMgVmVjdG9yZXMsIE1hdHJpY2VzIHkgTGlzdGFzDQoNCiMjIFZlY3RvcmVzDQoNClVuIHZlY3RvciBlcyB1biAqKm9iamV0byoqIHF1ZSBwdWVkZSBjb250ZW5lciBkZW50cm8gZGUgw6lsIHVuIHNvbG8gdGlwby9jbGFzZSBkZSBvdHJvcyBvYmpldG9zIHBlcm8gcmVwZXRpZG8gdmFyaWFzIHZlY2VzIChudW1lcmljLCBjaGFyYWN0ZXIsIGludGVnZXIsIGNvbXBsZXgsIGxvZ2ljYWwpLg0KDQoNCmBgYHtyfQ0KI0NyZWFjacOzbiBkZSB1biB2ZWN0b3IgcHJlZGV0ZXJtaW5hZG8NCnZlY3Rvcihtb2RlPSJjaGFyYWN0ZXIiLGxlbmd0aCA9IDVMKQ0KYGBgDQoNCmBgYHtyfQ0KdmVjdG9yKG1vZGU9Im51bWVyaWMiLGxlbmd0aCA9IDVMKQ0KYGBgDQoNCmBgYHtyfQ0KdmVjdG9yKG1vZGU9ImludGVnZXIiLGxlbmd0aCA9IDVMKQ0KYGBgDQoNCg0KYGBge3J9DQp2ZWN0b3IobW9kZT0ibG9naWNhbCIsbGVuZ3RoID0gNUwpDQpgYGANCg0KDQpgYGB7cn0NCnZlY3Rvcihtb2RlPSJjb21wbGV4IixsZW5ndGggPSA1TCkNCmBgYA0KDQpgYGB7cn0NCiNDcmVhY2nDs24gZGUgdmVjdG9yIGVkaXRhYmxlDQpjKCJob2xhIiwibXVuZG8iKQ0KYGBgDQoNCg0KYGBge3J9DQpjKDAuNSwxKQ0KYGBgDQoNCmBgYHtyfQ0KYyhUUlVFLEZBTFNFLFQsRikNCmBgYA0KDQoNCmBgYHtyfQ0KYygyaSw1aSkNCmBgYA0KDQo=</div>
 
 
 </div>
