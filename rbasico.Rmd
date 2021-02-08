@@ -331,3 +331,59 @@ c(TRUE,FALSE,T,F)
 c(2i,5i)
 ```
 
+```{r}
+#Letras
+letters
+LETTERS
+```
+
+## Matrices
+
+Es un tipo especial de los vectores en R con todas sus características y solo pueden contener información de un solo tipo/clase.
+
+```{r}
+#Matriz nula
+m=matrix(nrow = 3,ncol=2);m
+dim(m)
+attributes(m)
+```
+
+
+```{r}
+# Matriz llena op1
+m=matrix(1:6,nrow = 3,ncol=2);m
+```
+
+
+```{r}
+# Matriz llena op2
+m=1:6;m
+dim(m)=c(3,2)
+m
+```
+
+
+```{r}
+n=matrix(1:6,nrow = 3,ncol=2,byrow=T);n
+```
+
+### Listas
+
+Las listas es una clase de vector que pueden contener diferentes tipos/clases de objetos (numeric, character, integer, complex, logical) no importa que tipo sean.
+
+```{r}
+# Cinco elementos cada uno con un vector
+a=list("hola",2.4,10L,TRUE,5i)
+a
+a[[1]][1]
+a[[4]][1]
+```
+
+
+```{r}
+b=list(c("hola","mundo"),c(1:10),TRUE,FALSE,c(TRUE,FALSE))
+b
+b[[1]][2]
+b[[2]][5]
+```
+
