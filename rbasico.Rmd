@@ -1,0 +1,79 @@
+---
+title: "R Básico"
+subtitle: "Clase 1"
+author: "Bladimir Morales Torrez"
+date: "08 de febrero 2020"
+output: 
+  html_notebook:
+    toc: true
+    toc_float: true
+    theme: flatly
+    df_print: paged
+    fig_caption: true
+    number_section: true
+---
+
+<style>
+body {
+text-align: justify}
+}
+</style>
+
+# R y RStudio
+
+## R
+
+R es un entorno de software libre para gráficos y computación estadística. Se compila y se ejecuta en una amplia variedad de plataformas UNIX, Windows y MacOS. 
+
+Beneficios.
+
+* R es un lenguaje de programación en un entorno centrado principalmente en análisis estadístico y gráficos. 
+
+* R se descarga de Comprehensive R Archive Network o CRAN. En CRANse instala paquetes. 
+
+* R es uno de los cinco idiomas más solicitados en las ofertas de trabajo de los científicos de datos. 
+
+* R es gratis. 
+
+* R es muy versátil y tiene una amplia funcionalidad 
+
+En particular, para las personas que recién comienzan con R, su comunidad es un gran beneficio debido a su popularidad. Hay varios foros que tienen páginas y páginas dedicadas a resolver problemas de R. 
+
+Para descargar el programa ingresar al siguiente enlace <https://cran.r-project.org/> y siga las instrucciones de descarga e instalación.
+
+
+## RStudio
+
+RStudio es una interfaz gráfica de usuario para R que le permite escribir, editar y almacenar código, generar, ver, y almacenar gráficos, administrar archivos, objetos y marcos de datos, e integrarse con los sistemas de control de versiones, por nombrar algunas de sus funciones.
+
+Descargue el programa en <https://rstudio.com/products/rstudio/download/>.
+
+## Paquetes de R
+
+Un paquete es una colección de funciones, datos, y código convenientemente proporcionado en un formato completo agradable, hay poco más de 14.300 paquetes disponibles para descargar, cada uno con sus propias funciones y código especializados, todo por algún propósito diferente.
+
+Cada paquete es desarrollado y publicado por la comunidad R en general y depositada en repositorios. Un repositorio es una ubicación central donde existen muchos paquetes desarrollados y disponibles para su descarga
+
+Hay tres grandes repositorios. 
+
+* CRAN. The Comprehensive R Archive Network (Red Integral de Archivos R), que es el repositorio principal de R con más de 12,100 paquetes disponibles. 
+
+* Bioconductores. que es principalmente para paquetes de enfoque bioinformático. 
+
+* GitHub. un muy popular repositorio de código abierto que no es específico de R.
+
+
+
+#	Los datos y tipos de datos 
+
+## ¿Qué son los datos
+
+* [Wikipedia](https://es.wikipedia.org/wiki/Dato). Un dato es una representación simbólica (numérica, alfabética, algorítmica, espacial, etc.) de un atributo o variable cuantitativa o cualitativa. 
+
+* [Real Academia Española](https://dle.rae.es/dato). Del latín datum *'lo que se da'*
+
+  -Información sobre algo concreto que permite su conocimiento exacto o sirve para deducir las consecuencias derivadas de un hecho.
+
+  -Documento, testimonio, fundamento.
+
+  -Informática. Información dispuesta de manera adecuada para su tratamiento por una computadora. 
