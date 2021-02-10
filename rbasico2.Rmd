@@ -248,6 +248,21 @@ datos
 ```
 
 ```{r}
+head(datos)
+```
+
+```{r}
+head(datos,3)
+```
+```{r}
+tail(datos)
+```
+
+```{r}
+tail(datos,3)
+```
+
+```{r}
 datos[2,1]
 datos[2,2]
 ```
@@ -273,10 +288,169 @@ datos$sexo[1:3]
 ```{r}
 datos
 ```
+## Ordenar
+
+```{r}
+order(datos$edad)
+```
+
+```{r}
+datos[order(datos$edad),]
+```
+## Filtrar
+
+```{r}
+datos$sexo=="h"
+```
+
+```{r}
+datos[datos$sexo=="h",]
+```
+
 
 # Medidas de tendencia central (media, mediana, moda, y cuartiles)
 
+```{r}
+library(datasets)
+```
+
+```{r}
+#Base de datos de la calidad del aire
+datasets::airquality
+```
+
+```{r}
+cal_aire<-airquality
+cal_aire
+```
+
 ## Media
 
+```{r}
+str(mean)
+```
+
+```{r}
+mean(datos$edad)
+```
+
+```{r}
+mean(airquality$Temp)
+```
+
+```{r}
+mean(airquality$Ozone)
+```
+
+```{r}
+mean(airquality$Ozone,na.rm=TRUE)
+```
+
+## Mediana
+
+```{r}
+median(airquality$Temp)
+```
+
+```{r}
+median(airquality$Ozone)
+```
+
+```{r}
+median(airquality$Ozone,na.rm=TRUE)
+```
+
+## Moda
+
+```{r}
+table(airquality$Temp)
+```
+
+```{r}
+frecuencias<-data.frame(table(airquality$Temp))
+frecuencias
+```
+
+```{r}
+which.max(frecuencias$Freq)
+```
+
+
+```{r}
+moda <- frecuencias[which.max(frecuencias$Freq),1]
+moda
+```
+
+## Resumen de estadísticos
+
+```{r}
+str(summary)
+```
+
+
+```{r}
+summary(airquality$Ozone)
+```
+
+```{r}
+summary(airquality$Ozone,na.rm=TRUE)
+```
+
+## Cuartiles
+
+```{r}
+summary(airquality$Ozone)
+```
+
+```{r}
+quantile(airquality$Ozone,prob=c(0,0.25,0.5,0.75,1))
+```
+
+```{r}
+quantile(airquality$Ozone,prob=c(0,0.25,0.5,0.75,1),na.rm=T)
+```
+
+```{r}
+quantile(airquality$Ozone,prob=c(0,0.99,0.28),na.rm=T)
+```
 
 # Medidas de dispersión o Concentración(Varianza, desviación estándar y coeficiente de variación)
+
+
+## Varianza
+
+```{r}
+var(airquality$Ozone)
+```
+
+```{r}
+var(airquality$Ozone,na.rm=T)
+```
+
+
+## Desviación estandar
+
+
+```{r}
+sqrt(var(airquality$Ozone,na.rm=T))
+```
+
+```{r}
+sd(airquality$Ozone,na.rm=T)
+```
+
+## Coeficiente de variación
+
+```{r}
+sd(airquality$Ozone,na.rm=T)/mean(airquality$Ozone,na.rm=T)
+```
+
+```{r}
+library("FinCal")
+```
+
+```{r}
+coefficient.variation(sd=sd(airquality$Ozone,na.rm=T),avg=mean(airquality$Ozone,na.rm=T))
+```
+
+
