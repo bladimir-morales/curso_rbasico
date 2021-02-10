@@ -7,7 +7,7 @@ Contenido
 3. Libreria Tidyverse
 4. R y diferentes funcionalidades
 
-*Clase 2
+* Clase 2
 1. Operaciones con matrices
 2. if, for, while
 3. Funciones
