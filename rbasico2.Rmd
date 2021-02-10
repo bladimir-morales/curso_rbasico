@@ -1,0 +1,278 @@
+---
+title: "R Básico"
+subtitle: "Clase 2"
+author: "Bladimir Morales Torrez"
+date: "10 de febrero 2020"
+output: 
+  html_notebook:
+    toc: true
+    toc_float: true
+    theme: flatly
+    df_print: paged
+    fig_caption: true
+    number_section: true
+---
+
+<style>
+body {
+text-align: justify}
+}
+</style>
+
+# Operaciones con matrices
+
+## Operaciones Básicas
+
+```{r}
+m<-matrix(1:6,3,2)
+n<-matrix(10:15,3,2)
+```
+```{r}
+m;n
+```
+
+```{r}
+#Suma
+m+n
+```
+
+```{r}
+#Resta
+m-n
+```
+
+```{r}
+#Multiplicación número a número
+m*n
+```
+
+```{r}
+#Multiplicación a un escalar
+5*m
+```
+
+```{r}
+#Transpuesta
+t(m)
+```
+
+```{r}
+#Producto de matrices
+m%*%t(n)
+```
+
+## Algebra de Matrices
+
+```{r}
+#Transpuesta
+t(m)
+```
+
+```{r}
+#Diagonal
+diag(m)
+```
+
+```{r}
+#Traza
+sum(diag(m))
+```
+
+```{r}
+#Determinante
+m<-matrix(10:18,3,3)
+det(m)
+```
+
+```{r}
+m<-matrix(c(1,2,3,4,1,6,7,9,1),3,3)
+m
+#Inversa
+solve(m)
+```
+
+
+# if, for, while
+
+## if, else
+
+Te permite poner una condición y si es verdadera hace una cosa y otra en caso contrario, if y else van juntos pero else no se usa obligatoriamente es opcional, también se pueden anidar las sentencias 
+
+```{r}
+if(4<5){
+  print("Sí")
+}else
+  print("No")
+```
+
+```{r}
+x=4
+if(x>3){
+  y=10
+  y
+} else{
+  y=0
+  y
+}
+#Otra forma
+y=if(x>3){
+  10
+} else{
+  0
+}
+y
+```
+
+## For
+
+Tipo de bucle
+
+```{r}
+for(i in 1:5){
+  print(i)
+}
+```
+
+```{r}
+x=c("a","b","c","d")
+
+for(i in 1:4){
+  print(x[i])
+}
+```
+
+
+```{r}
+for(i in seq_along(x)){
+  print(x[i])
+}
+```
+
+
+```{r}
+for(letra in x){
+  print(letra)
+}
+```
+
+
+```{r}
+for(i in 1:4) print(x[i])
+```
+
+## While
+
+Es un constructor de bucle donde toma una expresión lógica y ejecuta bucles basándose en el valor de dicha expresión lógica
+
+```{r}
+conteo=5
+while (conteo<10) {
+  print(conteo)
+  conteo=conteo+1
+}
+```
+
+# Funciones
+
+Las funciones pueden ahorrar mucho trabajo al crearlas o usar las existentes en los proyectos que tenemos. Las funciones también son objetos que pertenecen a la clase/tipo function. Se puede anidar las funciones o usar sus parámetros para otras funciones. La funcion siempre devuelve la última expresión anotada en la función.
+
+```{r}
+add<-function(x,y){
+  s=x+y
+  e=x^y
+  print(s)
+  print(e)
+}
+add(5,100)
+```
+
+```{r}
+mayor10<-function(x){
+  con=x>10
+  x[con]
+}
+x<-1:15
+mayor10(x)
+```
+
+
+```{r}
+mayor<-function(x,n){
+  con=x>n
+  x[con]
+}
+x<-1:15
+mayor(x,8)
+con<-x>8
+```
+
+Puedes poner valores por defecto
+
+```{r}
+mayor=function(x,n=10){
+  con=x>n
+  x[con]
+}
+x=1:15
+mayor(x)
+```
+
+
+```{r}
+z=10
+f=function(x,y){
+  x^2+y/z
+}
+f(2,5)
+```
+
+```{r}
+x<-c(4,5,10)
+mean(x)
+media <- function(mi_vector) {
+  m<-sum(mi_vector)/length(mi_vector)
+  m
+}
+media(c(4,5,10))
+```
+
+# Data frame
+
+Una de las estructuras más conocidas de R es el data frame (marco de datos), esta estructura permite representar la información de forma tabular, donde cada fila es una obsevación y cada columna es una variable.
+
+```{r}
+sexo<-rep(c("h","m"),5)
+edad<-c(32,33,24,25,36,48,25,16,12,85)
+datos<-data.frame(sexo,edad)
+datos
+```
+
+```{r}
+datos[2,1]
+datos[2,2]
+```
+
+```{r}
+datos$sexo
+```
+
+```{r}
+datos$edad
+```
+
+```{r}
+datos$sexo[1]
+datos$edad[1]
+```
+
+```{r}
+datos$sexo[c(1,2,3)]
+datos$sexo[1:3]
+```
+
+```{r}
+datos
+```
+
+# Medidas de tendencia central (media, mediana, moda, y cuartiles)
+# Medidas de dispersión o Concentración(Varianza, desviación estándar y coeficiente de variación)
