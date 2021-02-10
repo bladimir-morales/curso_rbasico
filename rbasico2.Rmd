@@ -275,4 +275,8 @@ datos
 ```
 
 # Medidas de tendencia central (media, mediana, moda, y cuartiles)
+
+## Media
+
+
 # Medidas de dispersión o Concentración(Varianza, desviación estándar y coeficiente de variación)
