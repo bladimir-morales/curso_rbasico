@@ -14,3 +14,11 @@ Contenido
 4. Data frame
 5. Medidas de tendencia central (media, mediana, moda, y cuartiles)
 6. Medidas de dispersión o Concentración(Varianza, desviación estándar y coeficiente de variación)
+
+* Clase  3
+1. Importación de datos
+2. Introducción a la libreria "dplyr"
+3. Funcionalidades de la libreria "dplyr"
+ 
+
+ 
