@@ -19,6 +19,7 @@ text-align: justify}
 }
 </style>
 
+
 # Transformación de los Datos
 
 ![Transformación de los Datos](./img/datos.png)
