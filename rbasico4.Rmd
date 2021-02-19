@@ -1,6 +1,6 @@
 ---
 title: "R Básico"
-subtitle: "Clase 5"
+subtitle: "Clase 4"
 author: "Bladimir Morales Torrez"
 date: "19 de febrero 2020"
 output: 

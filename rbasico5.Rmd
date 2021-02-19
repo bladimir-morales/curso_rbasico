@@ -34,16 +34,19 @@ str(bd_covid)
 ```{r}
 lp<-bd_covid %>% 
   filter(DEPARTAMENTO=="LA PAZ")
+lp
 ```
 
 ```{r}
 cb<-bd_covid %>% 
   filter(DEPARTAMENTO=="COCHABAMBA")
+cb
 ```
 
 ```{r}
 sc<-bd_covid %>% 
   filter(DEPARTAMENTO=="SANTA CRUZ")
+sc
 ```
 
 ## Unión de data frames
