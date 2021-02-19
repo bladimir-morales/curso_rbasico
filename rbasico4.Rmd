@@ -1,0 +1,27 @@
+---
+title: "R Básico"
+subtitle: "Clase 5"
+author: "Bladimir Morales Torrez"
+date: "19 de febrero 2020"
+output: 
+  html_notebook:
+    toc: true
+    toc_float: true
+    theme: flatly
+    df_print: paged
+    fig_caption: true
+    number_section: true
+---
+
+<style>
+body {
+text-align: justify}
+}
+</style>
+
+# Unión de bases de datos
+
+# Gráficos base de R
+
+# 
+

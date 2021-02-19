@@ -1,0 +1,169 @@
+---
+title: "R Básico"
+subtitle: "Clase 5"
+author: "Bladimir Morales Torrez"
+date: "19 de febrero 2020"
+output: 
+  html_notebook:
+    toc: true
+    toc_float: true
+    theme: flatly
+    df_print: paged
+    fig_caption: true
+    number_section: true
+---
+
+<style>
+body {
+text-align: justify}
+}
+</style>
+
+# Manejo de data frames
+
+```{r}
+bd_covid<-read.csv("covid19mun_se.csv",encoding = "UTF-8")
+```
+
+```{r}
+str(bd_covid)
+```
+
+## Separar data frames
+
+```{r}
+lp<-bd_covid %>% 
+  filter(DEPARTAMENTO=="LA PAZ")
+```
+
+```{r}
+cb<-bd_covid %>% 
+  filter(DEPARTAMENTO=="COCHABAMBA")
+```
+
+```{r}
+sc<-bd_covid %>% 
+  filter(DEPARTAMENTO=="SANTA CRUZ")
+```
+
+## Unión de data frames
+
+```{r}
+str(lp)
+str(cb)
+str(sc)
+```
+
+```{r}
+#Unión de filas si y solo si las columnas son del mismo tipo y nombre
+bd_covid_eje<-rbind(lp,cb,sc)
+```
+
+```{r}
+#Unión de columnas si y solo si las filas son del mismo tamaño
+bd_covid_ejecol<-cbind(lp,sc,cb)
+```
+
+```{r}
+lp1<-lp[1:900,]
+sc1<-sc[1:900,]
+cb1<-cb[1:900,]
+bd_covid_ejecol<-cbind(lp1,sc1,cb1)
+```
+
+# Gráficos base
+
+## Unidimensionales
+
+Los gráficos recomendables son:
+
+```{r}
+airquality
+```
+* resumen de cinco números
+ `summary(data$var)`
+```{r}
+summary(airquality$Wind)
+```
+ 
+* Boxplots
+ `boxplot(data$var,col="blue")`
+
+```{r}
+boxplot(airquality$Wind)
+```
+ 
+* Histogramas (distribución de la variable)
+ `hist(data$var,col="green")`
+```{r}
+hist(airquality$Wind)
+```
+ 
+  si se quiere poner una alfombra debajo del histograma
+  `rug(data$var`
+```{r}
+hist(airquality$Wind)
+rug(airquality$Wind)
+```
+  
+  se puede manipular también el número de barras que hay en el histograma
+  `hist(data$var,breaks=100)`
+
+```{r}
+hist(airquality$Wind,breaks = 50)
+rug(airquality$Wind)
+```
+  
+se puede poner líneas en los ejes x
+  `abline(v=xx,lwd=2)`
+  `abline(v=median(data$var),lwd=2)`
+
+```{r}
+hist(airquality$Wind)
+abline(v=5,lwd=2)
+abline(v=median(airquality$Wind),lwd=2)
+```
+
+* Diagrama de barras
+se utiliza para datos categóricos
+
+`barplot(table(data$var),col="wheat",main="")`
+
+```{r}
+barplot(table(iris$Species),col="wheat")
+```
+
+### Bidimensionales
+
+* Multiples Boxplots
+
+```{r}
+boxplot(Sepal.Length~Species,data=iris,col="red")
+```
+
+
+* Multiples histogramas
+
+```{r}
+par(mfrow=c(2,1),mar=c(4,4,2,1))
+hist(iris$Sepal.Length,col="green")
+hist(iris$Sepal.Width,col="green")
+```
+
+* Scatterplot
+
+```{r}
+with(iris,plot(Sepal.Length,Sepal.Width,col=Species))
+abline(h=3,lwd=2,lty=2)
+```
+
+* Multiples Scatterplots
+
+```{r}
+par(mfrow=c(1,2),mar=c(5,4,2,1))
+with(subset(iris,Species=="setosa"),plot(Sepal.Length,Sepal.Width,main="Setosa"))
+with(subset(iris,Species=="versicolor"),plot(Sepal.Length,Sepal.Width,main="Versicolor"))
+
+```
+
+

@@ -84,7 +84,7 @@ Los archivos csv (comma-separated values) valores separados por comas.
 
 ```{r}
 #Importar
-bd_covid<-read.csv("covid19mun_se.csv",encoding = "UTF-8")
+bd_covid<-read.csv("covid19mun_se.csv",encoding = "UTF-8",sep = ";")
 ```
 
 ```{r}
@@ -94,7 +94,7 @@ write.csv(bd_covid,"covid19mun.csv",sep = ",", fileEncoding = "UTF-8",row.names 
 ```
 
 ```{r}
-bd_covid<-read.table("covid19mun_se.csv",encoding = "UTF-8",sep = ",",header=TRUE)
+bd_covid<-read.table("covid19mun_se.csv",encoding = "UTF-8",sep=",",header = TRUE)
 ```
 
 ## Excel Exportar/Importar
